@@ -343,7 +343,7 @@ MonoBehaviour:
   energy: 0
   AttackPoint: 0
   bodyPrefab: {fileID: 7526888423267112248, guid: 29ce8b60ab4924b4aa2a04938a3ac50a, type: 3}
-  moveInterval: 0.5
+  moveInterval: 1
 --- !u!4 &1213437263
 Transform:
   m_ObjectHideFlags: 0

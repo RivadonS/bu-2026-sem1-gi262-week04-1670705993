@@ -10,14 +10,24 @@ namespace Solution
     {
         public GameObject YouWin;
         // กำหนดชื่อไอเท็มและจำนวนที่ต้องการใช้ในการเปิดทางออก
+        public string ItemToOpen = "Key";
+        public int ItemAmountToOpen = 2;
 
         public override bool Hit()
         {
-            // ตรวจสอบว่าผู้เล่นมีไอเท็มที่ต้องการหรือไม่
-            YouWin.SetActive(true);
-            Debug.Log("You win");
-            return true;
-          
+            // ตรวจสอบว่าผู้เล่นมีไอเท็มที่ต้องการหรือไม่.0.0
+            bool isHasItemAmount = mapGenerator.player.inventory.HasItem(ItemToOpen, ItemAmountToOpen);
+            if (isHasItemAmount)
+            {
+                YouWin.SetActive(true);
+                Debug.Log("You win");
+                return true;
+            }
+            else
+            {
+                Debug.Log($"Need {ItemAmountToOpen} {ItemToOpen}s to open.");
+                return false;
+            }
         }
     }
 }
