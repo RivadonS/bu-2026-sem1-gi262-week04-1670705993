@@ -417,9 +417,13 @@ MonoBehaviour:
     values: 010000000100000002000000030000000300000004000000
   as08Numbers: 00000000000000000000000001000000010000000100000001000000020000000300000003000000
   as09Inventory:
-    entries: []
-  as09ItemName: 
-  as09Quantity: 0
+    entries:
+    - key: Apple
+      value: 1
+    - key: Banana
+      value: 1
+  as09ItemName: Apple
+  as09Quantity: 2
   as10EventQueue:
     values: []
   as11PlayerStats:
