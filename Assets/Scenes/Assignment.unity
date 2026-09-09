@@ -382,8 +382,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fbaf664c0f73049ab5d67e60db4318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assignment.Assignment
-  as01Words: []
-  as02Numbers: 
+  as01Words:
+  - A
+  - A
+  - A
+  - B
+  - B
+  - C
+  as02Numbers: 010000000100000002000000030000000300000003000000
   as03Input: 
   as04List:
     values: 
