@@ -390,11 +390,15 @@ MonoBehaviour:
   - B
   - C
   as02Numbers: 010000000100000002000000030000000300000003000000
-  as03Input: 
+  as03Input: ()
   as04List:
-    values: 
+    values: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   as05List:
-    values: []
+    values:
+    - A
+    - B
+    - C
+    - D
   as06FirstDictionary:
     entries: []
   as06SecondDictionary:
