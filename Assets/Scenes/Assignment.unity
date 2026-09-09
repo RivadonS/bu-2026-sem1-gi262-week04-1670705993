@@ -436,9 +436,13 @@ MonoBehaviour:
       name: Reach Level 2
       priority: 0
   as11PlayerStats:
-    entries: []
-  as11StatName: 
-  as11Value: 0
+    entries:
+    - key: Health
+      value: 1
+    - key: Power
+      value: 1
+  as11StatName: Power
+  as11Value: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

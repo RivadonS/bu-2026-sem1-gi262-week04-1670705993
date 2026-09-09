@@ -16,8 +16,8 @@ namespace Assignment
             // AS07_RemoveDuplicatesFromLinkedList();
             // AS08_TopFrequentNumber();
             // AS09_PlayerInventory();
-             AS10_GameEventQueue();
-            // AS11_PlayerStatsTracker();
+            // AS10_GameEventQueue();
+             AS11_PlayerStatsTracker();
         }
 
         #region Assignment
@@ -365,7 +365,29 @@ namespace Assignment
             Dictionary<string, int> playerStats = as11PlayerStats.GetDictionary();
             string statName = as11StatName;
             int value = as11Value;
-            throw new System.NotImplementedException();
+
+            if (playerStats == null)
+            {
+                return;
+            }
+
+            if (playerStats.ContainsKey(statName))
+            {
+                playerStats[statName] += value;
+            }
+            else
+            {
+                playerStats[statName] = value;
+            }
+
+            Debug.Log($"Updated Player Stats Name: {statName} : {playerStats[statName]}");
+
+            Debug.Log("Current Player Stats:");
+
+            foreach (var kvp in playerStats)
+            {
+                Debug.Log($"{kvp.Key}: {kvp.Value}");
+            }
         }
 
         #endregion
