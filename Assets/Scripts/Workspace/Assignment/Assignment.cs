@@ -15,8 +15,8 @@ namespace Assignment
             // AS06_MergeDictionaries();
             // AS07_RemoveDuplicatesFromLinkedList();
             // AS08_TopFrequentNumber();
-             AS09_PlayerInventory();
-            // AS10_GameEventQueue();
+            // AS09_PlayerInventory();
+             AS10_GameEventQueue();
             // AS11_PlayerStatsTracker();
         }
 
@@ -324,7 +324,35 @@ namespace Assignment
         public void AS10_GameEventQueue()
         {
             LinkedList<GameEvent> eventQueue = as10EventQueue.GetLinkedList();
-            throw new System.NotImplementedException();
+            
+            if (eventQueue == null || eventQueue.Count == 0)
+            {
+                Debug.Log("Event Queue is empty.");
+                return;
+            }
+
+            while (eventQueue.Count > 0)
+            {
+                GameEvent currentEvent = eventQueue.First.Value;
+
+                eventQueue.RemoveFirst();
+
+                Debug.Log($"Processing Event: {currentEvent.Name}");
+                Debug.Log($"Remaining Events: {eventQueue.Count}");
+
+                switch (currentEvent.EventType.ToLower())
+                {
+                    case "enemy":
+                        Debug.Log($"Enemy event processed - {currentEvent.Name}");
+                break;
+                    case "powerup":
+                        Debug.Log($"Power-up event processed - {currentEvent.Name}");
+                break;
+                    case "level":
+                        Debug.Log($"Level event processed - {currentEvent.Name}");
+                break;
+                }
+            }
         }
 
         [Header("AS11 - Player Stats Tracker")]

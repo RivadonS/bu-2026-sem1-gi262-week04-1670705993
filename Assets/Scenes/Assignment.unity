@@ -425,7 +425,16 @@ MonoBehaviour:
   as09ItemName: Apple
   as09Quantity: 2
   as10EventQueue:
-    values: []
+    values:
+    - eventType: Enemy
+      name: Goblin Appeared
+      priority: 0
+    - eventType: Power UP
+      name: Health Boost Found
+      priority: 0
+    - eventType: 'Level: '
+      name: Reach Level 2
+      priority: 0
   as11PlayerStats:
     entries: []
   as11StatName: 
