@@ -254,7 +254,42 @@ namespace Assignment
         public void AS08_TopFrequentNumber()
         {
             int[] numbers = as08Numbers;
-            throw new System.NotImplementedException();
+            
+            if (numbers == null || numbers.Length == 0)
+            {
+                Debug.Log("Numbers Not Provided");
+                return;
+            }
+
+            Dictionary<int, int> frequencyMap = new Dictionary<int, int>();
+
+            foreach (int number in numbers)
+            {
+                if (frequencyMap.ContainsKey(number))
+                {
+                    frequencyMap[number]++;
+                }
+                else
+                {
+                    frequencyMap[number] = 1;
+                }
+            }
+
+            int topNumber = numbers[0];
+            int maxCount = frequencyMap[topNumber];
+
+            foreach (int num in numbers)
+            {
+                int currentCount = frequencyMap[num];
+
+                if (currentCount > maxCount)
+                {
+                    maxCount = currentCount;
+                    topNumber = num;
+                }
+            }
+
+            Debug.Log($"Top frequent number: {topNumber}, Frequency: {maxCount}");
         }
 
         [Header("AS09 - Player Inventory")]
