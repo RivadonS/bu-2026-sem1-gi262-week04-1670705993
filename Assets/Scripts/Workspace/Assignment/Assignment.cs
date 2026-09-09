@@ -11,10 +11,10 @@ namespace Assignment
             // AS02_CountNumber();
             // AS03_CheckValidBrackets();
             // AS04_PrintReverseLinkedList();
-            AS05_FindMiddleElement();
+            // AS05_FindMiddleElement();
             // AS06_MergeDictionaries();
             // AS07_RemoveDuplicatesFromLinkedList();
-            // AS08_TopFrequentNumber();
+             AS08_TopFrequentNumber();
             // AS09_PlayerInventory();
             // AS10_GameEventQueue();
             // AS11_PlayerStatsTracker();
@@ -190,7 +190,25 @@ namespace Assignment
         {
             Dictionary<string, int> dict1 = as06FirstDictionary.GetDictionary();
             Dictionary<string, int> dict2 = as06SecondDictionary.GetDictionary();
-            throw new System.NotImplementedException();
+            
+            Dictionary<string, int> mergedDictionary = new Dictionary<string, int>(dict1);
+
+            foreach (KeyValuePair<string, int> entry in dict2)
+            {
+                if (mergedDictionary.ContainsKey(entry.Key))
+                {
+                    mergedDictionary[entry.Key] += entry.Value;
+                }
+                else
+                {
+                    mergedDictionary[entry.Key] = entry.Value;
+                }
+            }
+
+            foreach (KeyValuePair<string, int> entry in mergedDictionary)
+            {
+                Debug.Log($"Key: {entry.Key}, Value: {entry.Value}");
+            }
         }
 
         [Header("AS07 - Remove Duplicates From Linked List")]
@@ -199,7 +217,35 @@ namespace Assignment
         public void AS07_RemoveDuplicatesFromLinkedList()
         {
             LinkedList<int> list = as07List.GetLinkedList();
-            throw new System.NotImplementedException();
+            
+            if (list == null || list.Count == 0)
+            {
+                Debug.Log("Linked List is empty.");
+                return;
+            }
+
+            Dictionary<int, bool> seen = new Dictionary<int, bool>();
+
+            LinkedListNode<int> currentNode = list.First;
+
+            while (currentNode != null)
+            {
+                LinkedListNode<int> nextNode = currentNode.Next;
+                if (seen.ContainsKey(currentNode.Value))
+                {
+                    list.Remove(currentNode);
+                }
+                else
+                {
+                    seen[currentNode.Value] = true;
+                }
+                currentNode = nextNode;
+            }
+
+            foreach (int value in list)
+            {
+                Debug.Log(value);
+            }
         }
 
         [Header("AS08 - Top Frequent Number")]

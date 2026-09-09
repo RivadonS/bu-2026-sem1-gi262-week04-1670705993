@@ -400,11 +400,21 @@ MonoBehaviour:
     - C
     - D
   as06FirstDictionary:
-    entries: []
+    entries:
+    - key: A
+      value: 1
+    - key: B
+      value: 1
+    - key: C
+      value: 1
   as06SecondDictionary:
-    entries: []
+    entries:
+    - key: A
+      value: 1
+    - key: C
+      value: 1
   as07List:
-    values: 
+    values: 010000000100000002000000030000000300000004000000
   as08Numbers: 
   as09Inventory:
     entries: []
