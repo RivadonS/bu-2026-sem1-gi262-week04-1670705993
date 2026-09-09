@@ -92,7 +92,49 @@ namespace Assignment
         public void AS03_CheckValidBrackets()
         {
             string input = as03Input;
-            throw new System.NotImplementedException();
+            Dictionary<char, char> bracketPairs = new Dictionary<char, char>
+            {
+                { '(', ')' },
+                { '{', '}' },
+                { '[', ']' }
+            };
+
+            LinkedList<char> stack = new LinkedList<char>();
+            bool isValid = true;
+
+            if (input != null)
+            {
+                foreach (char c in input)
+                {
+                    if (bracketPairs.ContainsKey(c))
+                    {
+                        stack.AddLast(c);
+                    }
+                    else if (bracketPairs.ContainsValue(c))
+                    {
+                        if (stack.Count == 0)
+                        {
+                            isValid = false;
+                            break;
+                        }
+
+                        char lastOpenBracket = stack.Last.Value;
+                        if (bracketPairs[lastOpenBracket] != c)
+                        {
+                            isValid = false;
+                            break;
+                        }
+                        stack.RemoveLast();
+                    }
+                }
+            }
+
+            if (stack.Count > 0)
+            {
+                isValid = false;
+            }
+
+            Debug.Log(isValid ? "Valid" : "Invalid");
         }
 
         [Header("AS04 - Print Reverse Linked List")]
